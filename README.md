@@ -1,9 +1,9 @@
 
 # otel-go-metric
 
-this docker-compose env helps understand basic golang otpl metric exporter.
+this docker-compose env helps understand basic golang otlp metric exporter.
 
-one can viualize the exported metric in grafana
+one can visualize the exported metric in grafana.
 
 follow the below steps to check it.
 
@@ -25,9 +25,9 @@ in explore section, you would be able to see metric starting from `test_poc_*`
 
 prometheus url : `localhost:9090`
 
-otlp collector container metrics : `localhost:8888/metrics`
+otlp collector container's metrics : `localhost:8888/metrics`
 
-metric related poc : `localhost:8889/metrics`
+metrics related to app : `localhost:8889/metrics`
 
 
- Note that the setup may not be secure.
+Note that, the setup may not be secure.
