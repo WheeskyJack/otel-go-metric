@@ -1,0 +1,34 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+exporters:
+  logging:
+    verbosity: detailed
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    namespace: test_poc
+    send_timestamps: true
+    resource_to_telemetry_conversion:
+      enabled: true
+
+extensions:
+  health_check:
+
+service:
+  telemetry:
+    logs:
+      level: debug
+      initial_fields:
+        service: test_poc
+    metrics:
+      level: detailed
+  extensions: [health_check]
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus, logging]
