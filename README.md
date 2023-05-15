@@ -7,15 +7,15 @@ one can visualize the exported metric in grafana.
 
 follow the below steps to check it.
 
-run `go mod vendor` in `poc/otlpexporter` dir.
+run `go mod vendor` in top dir.
 
-`cd poc/otlpexporter/docker-compose`
+`cd docker-compose`
 
 execute `docker-compose up -d`
 
 execute `docker ps -a` to see if all containers are in running state or not.
 
-cd `poc/otlpexporter`
+cd back to top of repo.
 
 execute `go run main.go`
 
